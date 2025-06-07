@@ -4,6 +4,7 @@ import logging
 from datetime import datetime
 from src.agents.consultancy_agent import ConsultancyAgent, ConversationContext
 from src.knowledge.knowledge_search import SimpleKnowledgeSearch
+from src.knowledge.vector_search import VectorKnowledgeSearch
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -91,6 +92,9 @@ def initialize_session_state():
     
     if "knowledge_search" not in st.session_state:
         st.session_state.knowledge_search = SimpleKnowledgeSearch()
+    
+    if "vector_search" not in st.session_state:
+        st.session_state.vector_search = VectorKnowledgeSearch()
 
 def display_header():
     """Display the professional header"""
@@ -144,25 +148,18 @@ async def process_user_input(user_input: str):
         )
         context.lead_score = st.session_state.lead_score
         
-        # Search knowledge base for relevant context
-        knowledge_results = st.session_state.knowledge_search.search(user_input)
-        
-        # Add knowledge context to the agent if available
-        if knowledge_results:
-            knowledge_context = "\n\n".join([
-                f"Relevant experience: {result['chunks'][0] if result['chunks'] else ''}"
-                for result in knowledge_results[:2]
-            ])
-            user_input_with_context = f"{user_input}\n\nContext from knowledge base:\n{knowledge_context}"
-        else:
-            user_input_with_context = user_input
-        
-        # Get response from agent
-        response = await st.session_state.agent.handle_interaction(user_input_with_context, context)
+        # Get response from agent (it handles knowledge search internally now)
+        response = await st.session_state.agent.handle_interaction(user_input, context)
         
         # Update session state
         st.session_state.engagement_stage = response.get("stage", context.engagement_stage)
         st.session_state.lead_score = response.get("lead_score", context.lead_score)
+        
+        # Store additional response info for display
+        st.session_state.last_response_info = {
+            "knowledge_sources": response.get("knowledge_sources", 0),
+            "vector_search_available": response.get("vector_search_available", False)
+        }
         
         return response["content"]
         
@@ -201,6 +198,22 @@ def display_conversation_metrics():
         # Knowledge base status
         doc_count = len(st.session_state.knowledge_search.get_document_list())
         st.markdown(f"**Knowledge Base:** {doc_count} documents")
+        
+        # Vector search status
+        if hasattr(st.session_state, 'vector_search'):
+            if st.session_state.vector_search.is_pinecone_available():
+                st.markdown("**Vector Search:** 🟢 Pinecone Active")
+            elif st.session_state.vector_search.is_available():
+                st.markdown("**Vector Search:** 🟡 Local Model")
+            else:
+                st.markdown("**Vector Search:** 🔴 Unavailable")
+        
+        # Last response info
+        if hasattr(st.session_state, 'last_response_info'):
+            info = st.session_state.last_response_info
+            sources = info.get('knowledge_sources', 0)
+            if sources > 0:
+                st.markdown(f"**Last Query:** {sources} sources found")
 
 def main():
     """Main application function"""

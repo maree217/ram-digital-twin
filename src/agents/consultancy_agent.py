@@ -4,6 +4,7 @@ from typing import Dict, List, Optional, Any
 from datetime import datetime
 import google.generativeai as genai
 from src.config import settings
+from src.knowledge.vector_search import VectorKnowledgeSearch
 
 logging.basicConfig(level=settings.log_level)
 logger = logging.getLogger(__name__)
@@ -24,6 +25,7 @@ class ConsultancyAgent:
         self.model_name = "gemini-2.0-flash-exp"
         self._init_gemini()
         self.persona_prompt = self._load_consultancy_persona()
+        self.vector_search = VectorKnowledgeSearch()
         
     def _init_gemini(self):
         if settings.google_api_key:
@@ -70,18 +72,26 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             stage = self._determine_engagement_stage(user_message, context)
             context.engagement_stage = stage
             
+            # Get enhanced knowledge context using vector search
+            knowledge_context = await self._get_knowledge_context(user_message)
+            
             if stage == "rapport_building":
-                response = await self._build_rapport_response(user_message, context)
+                response = await self._build_rapport_response(user_message, context, knowledge_context)
             elif stage == "expertise_demonstration":
-                response = await self._demonstrate_expertise(user_message, context)
+                response = await self._demonstrate_expertise(user_message, context, knowledge_context)
             elif stage == "solution_presentation":
-                response = await self._present_solution(user_message, context)
+                response = await self._present_solution(user_message, context, knowledge_context)
             elif stage == "engagement_conversion":
-                response = await self._handle_engagement(user_message, context)
+                response = await self._handle_engagement(user_message, context, knowledge_context)
             else:
-                response = await self._generate_general_response(user_message, context)
+                response = await self._generate_general_response(user_message, context, knowledge_context)
             
             self._update_lead_score(context, user_message, response)
+            
+            # Add knowledge search info to response
+            response["knowledge_sources"] = len(knowledge_context.get("sources", []))
+            response["vector_search_available"] = self.vector_search.is_pinecone_available()
+            
             return response
             
         except Exception as e:
@@ -89,7 +99,9 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             return {
                 "content": "I'm experiencing a technical issue. Could you please rephrase your question? If the issue persists, you can reach Ram directly at ram@senthilmaree.com",
                 "stage": context.engagement_stage,
-                "lead_score": context.lead_score
+                "lead_score": context.lead_score,
+                "knowledge_sources": 0,
+                "vector_search_available": False
             }
     
     def _determine_engagement_stage(self, user_message: str, context: ConversationContext) -> str:
@@ -114,7 +126,38 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             
         return context.engagement_stage
     
-    async def _build_rapport_response(self, user_message: str, context: ConversationContext) -> Dict[str, Any]:
+    async def _get_knowledge_context(self, user_message: str) -> Dict[str, Any]:
+        """Get relevant knowledge context using vector search"""
+        try:
+            if self.vector_search.is_available():
+                # Use vector search for semantic retrieval
+                search_results = await self.vector_search.search(user_message, max_results=3)
+                
+                if search_results:
+                    context_text = "\n\n".join([
+                        f"From {result['document']}: {result['chunks'][0][:500]}..."
+                        for result in search_results if result['chunks']
+                    ])
+                    
+                    return {
+                        "context": context_text,
+                        "sources": [r['document'] for r in search_results],
+                        "search_type": "vector" if self.vector_search.is_pinecone_available() else "semantic"
+                    }
+            
+            # Fallback: return empty context
+            return {"context": "", "sources": [], "search_type": "none"}
+            
+        except Exception as e:
+            logger.error(f"Error getting knowledge context: {e}")
+            return {"context": "", "sources": [], "search_type": "error"}
+    
+    async def _build_rapport_response(self, user_message: str, context: ConversationContext, knowledge_context: Dict = None) -> Dict[str, Any]:
+        # Add knowledge context if available
+        context_section = ""
+        if knowledge_context and knowledge_context.get("context"):
+            context_section = f"\n\nRelevant experience context:\n{knowledge_context['context']}"
+        
         prompt = f"""
         {self.persona_prompt}
         
@@ -124,7 +167,7 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
         3. Building credibility through relevant questions
         4. Setting the stage for deeper discussion
         
-        User message: {user_message}
+        User message: {user_message}{context_section}
         
         Respond as Ram would in the first few exchanges of a consultancy conversation.
         """
@@ -136,7 +179,12 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             "lead_score": context.lead_score
         }
     
-    async def _demonstrate_expertise(self, user_message: str, context: ConversationContext) -> Dict[str, Any]:
+    async def _demonstrate_expertise(self, user_message: str, context: ConversationContext, knowledge_context: Dict = None) -> Dict[str, Any]:
+        # Add knowledge context if available
+        context_section = ""
+        if knowledge_context and knowledge_context.get("context"):
+            context_section = f"\n\nRelevant experience context:\n{knowledge_context['context']}"
+        
         prompt = f"""
         {self.persona_prompt}
         
@@ -147,7 +195,7 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
         4. Asking follow-up questions to understand their specific situation
         
         User message: {user_message}
-        Previous context: {self._format_conversation_history(context)}
+        Previous context: {self._format_conversation_history(context)}{context_section}
         
         Share relevant experience and ask insightful questions to understand their needs better.
         """
@@ -159,7 +207,12 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             "lead_score": context.lead_score
         }
     
-    async def _present_solution(self, user_message: str, context: ConversationContext) -> Dict[str, Any]:
+    async def _present_solution(self, user_message: str, context: ConversationContext, knowledge_context: Dict = None) -> Dict[str, Any]:
+        # Add knowledge context if available
+        context_section = ""
+        if knowledge_context and knowledge_context.get("context"):
+            context_section = f"\n\nRelevant experience context:\n{knowledge_context['context']}"
+        
         prompt = f"""
         {self.persona_prompt}
         
@@ -171,7 +224,7 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
         5. Identifying if this requires deeper consultation
         
         User message: {user_message}
-        Previous context: {self._format_conversation_history(context)}
+        Previous context: {self._format_conversation_history(context)}{context_section}
         
         Provide thoughtful recommendations and suggest further consultation if the challenge is complex.
         """
@@ -183,7 +236,12 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             "lead_score": context.lead_score
         }
     
-    async def _handle_engagement(self, user_message: str, context: ConversationContext) -> Dict[str, Any]:
+    async def _handle_engagement(self, user_message: str, context: ConversationContext, knowledge_context: Dict = None) -> Dict[str, Any]:
+        # Add knowledge context if available
+        context_section = ""
+        if knowledge_context and knowledge_context.get("context"):
+            context_section = f"\n\nRelevant experience context:\n{knowledge_context['context']}"
+        
         prompt = f"""
         {self.persona_prompt}
         
@@ -194,7 +252,7 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
         4. Providing clear contact information and availability
         
         User message: {user_message}
-        Previous context: {self._format_conversation_history(context)}
+        Previous context: {self._format_conversation_history(context)}{context_section}
         
         Guide them toward scheduling a consultation to discuss their needs in detail.
         """
@@ -206,12 +264,17 @@ Always respond as Ram would - knowledgeable, professional, and solution-focused.
             "lead_score": context.lead_score
         }
     
-    async def _generate_general_response(self, user_message: str, context: ConversationContext) -> Dict[str, Any]:
+    async def _generate_general_response(self, user_message: str, context: ConversationContext, knowledge_context: Dict = None) -> Dict[str, Any]:
+        # Add knowledge context if available
+        context_section = ""
+        if knowledge_context and knowledge_context.get("context"):
+            context_section = f"\n\nRelevant experience context:\n{knowledge_context['context']}"
+        
         prompt = f"""
         {self.persona_prompt}
         
         User message: {user_message}
-        Previous context: {self._format_conversation_history(context)}
+        Previous context: {self._format_conversation_history(context)}{context_section}
         
         Respond as Ram would, maintaining the professional consultancy conversation.
         """
