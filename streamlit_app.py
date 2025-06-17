@@ -6,9 +6,16 @@ from src.agents.consultancy_agent import ConsultancyAgent, ConversationContext
 from src.knowledge.knowledge_search import SimpleKnowledgeSearch
 from src.knowledge.vector_search import VectorKnowledgeSearch
 
+# Server configuration handled via command line arguments
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Function to load local CSS
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 # Page configuration
 st.set_page_config(
@@ -18,43 +25,24 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS for professional styling
+# Load external CSS file
+local_css("style.css")
+
+# Additional CSS for chat container and button styling
 st.markdown("""
 <style>
-.main-header {
-    background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 100%);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
 .chat-container {
     max-width: 800px;
     margin: 0 auto;
 }
 
-.user-message {
-    background-color: #f0f9ff;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem 0;
-    border-left: 4px solid #3b82f6;
-}
-
-.assistant-message {
-    background-color: #f8fafc;
-    padding: 1rem;
-    border-radius: 10px;
-    margin: 0.5rem 0;
-    border-left: 4px solid #10b981;
-}
-
 .metrics-container {
-    background-color: #f1f5f9;
+    background-color: rgba(241, 245, 249, 0.9);
     padding: 1rem;
     border-radius: 8px;
     margin: 1rem 0;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .stButton > button {
@@ -244,10 +232,22 @@ def main():
                 </div>
                 """, unsafe_allow_html=True)
         
-        # Chat input
-        user_input = st.chat_input("Ask me about digital transformation, PMO setup, Dynamics 365, or any business challenge...")
+        # Chat input using form for better compatibility
+        with st.form("chat_form", clear_on_submit=True):
+            col1, col2 = st.columns([6, 1])
+            
+            with col1:
+                user_input = st.text_input(
+                    "Your message:",
+                    placeholder="Ask me about digital transformation, PMO setup, Dynamics 365, or any business challenge...",
+                    key="user_input",
+                    label_visibility="collapsed"
+                )
+            
+            with col2:
+                submitted = st.form_submit_button("Send", use_container_width=True)
         
-        if user_input:
+        if submitted and user_input:
             # Add user message to history
             st.session_state.messages.append({"role": "user", "content": user_input})
             

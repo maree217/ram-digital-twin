@@ -1,0 +1,1668 @@
+{
+  "test_run": {
+    "timestamp": "2025-06-08T09:24:53.685237",
+    "total_scenarios": 21,
+    "total_results": 21
+  },
+  "results": [
+    {
+      "scenario_name": "simple_greeting",
+      "conversation_id": "test_simple_greeting_01316368",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "hi",
+          "assistant": "Hi! I'm an AI consultant designed to help with digital transformation and business challenges through this modern chat interface. What brings you here today?\n",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "just browsing",
+          "assistant": "\"I understand just browsing can be a good way to unwind. If you happen to have any business challenges on your mind that I might be able to assist with, feel free to let me know!\"\n",
+          "stage": "casual_chat",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "what can you help with",
+          "assistant": "I can help with a range of digital transformation and business challenges. That could be anything from streamlining processes to implementing new technologies. I've also helped organizations with change management and PMO setup. What kind of challenges are you thinking about?\n",
+          "stage": "solution_presentation",
+          "lead_score": 8,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "casual_chat",
+        "solution_presentation"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        8
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 33.33333333333333,
+        "lead_score_progression": 8,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 3.557755,
+      "timestamp": "2025-06-08T09:24:12.198010"
+    },
+    {
+      "scenario_name": "direct_business_inquiry",
+      "conversation_id": "test_direct_business_inquiry_bea0a4ad",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "I need help with digital transformation",
+          "assistant": "Okay, I understand you need help with digital transformation. That's a broad topic, so to give you the most relevant recommendations, could you tell me a bit more about your specific situation? For example:\n\n*   What are your biggest challenges right now?\n*   What are your goals for digital transformation?\n*   What kind of organization are you with (industry, size, etc.)?\n\nIn the meantime, broadly speaking, my approach involves a 5-phase framework covering discovery, strategy, implementation, optimization, and continuous improvement.\n",
+          "stage": "solution_presentation",
+          "lead_score": 23,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We're a housing association with 50,000 properties",
+          "assistant": "Okay, that's helpful to know. With 50,000 properties, you're likely dealing with a significant volume of data and tenant interactions.\n\nI've actually led a digital transformation for a housing association of a similar size. A key challenge we addressed was integrating their disconnected legacy systems and automating manual processes. This significantly improved tenant satisfaction and reduced response times.\n\nAre you experiencing similar issues? Knowing your specific pain points will help me tailor my recommendations.\n",
+          "stage": "solution_presentation",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What's your approach to PMO setup?",
+          "assistant": "Okay, happy to share my approach to PMO setup.\n\nEssentially, I focus on creating a PMO that's tailored to your specific needs and organizational culture. This usually involves a hybrid Agile-Waterfall methodology, executive dashboards for real-time project health, and a strong change management component. I've seen this reduce project failure rates and improve budget adherence significantly.\n\nDoes that sound like a good starting point? We can dive deeper into any of those areas.\n",
+          "stage": "solution_presentation",
+          "lead_score": 50,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation"
+      ],
+      "lead_scores": [
+        23,
+        35,
+        50
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 33.33333333333333,
+        "lead_score_progression": 50,
+        "response_quality_score": 80,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 4.411073,
+      "timestamp": "2025-06-08T09:24:16.609482"
+    },
+    {
+      "scenario_name": "skeptical_user",
+      "conversation_id": "test_skeptical_user_c6632373",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Another consultant...",
+          "assistant": "\"I hear you. What's been your experience with consultants so far?\"\n",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Have you actually delivered any real results?",
+          "assistant": "I understand the skepticism. Yes, I've been involved in digital transformations that have delivered real results. For example, I've worked on projects that reduced operational costs by 30-40% within a year.\n",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Prove you know Dynamics 365",
+          "assistant": "I've led Dynamics 365 implementations, including a full rollout for a housing association with over 2,000 users. I've also designed custom workflows that reduced manual processing by 60%. Does that give you a better idea?\n",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "What's the biggest transformation you've done?",
+          "assistant": "Probably the largest in scope was a digital transformation program for a housing association. It involved overhauling their entire technology stack and business processes.\n",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        15,
+        30
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 75.0,
+        "lead_score_progression": 30,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": true
+        },
+        "overall_success_rate": 100.0
+      },
+      "execution_time": 3.996418,
+      "timestamp": "2025-06-08T09:24:20.606250"
+    },
+    {
+      "scenario_name": "high_intent_engagement",
+      "conversation_id": "test_high_intent_engagement_a923b693",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Hello",
+          "assistant": "Hi there! I'm an AI consultant designed to help with digital transformation and business challenges through this modern chat interface. What brings you here today?\n",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We need urgent help with our Dynamics 365 implementation",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 48,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Budget is not an issue, we need this done quickly",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 100,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Can we schedule a call this week?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 100,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "I'm the CTO and can make decisions immediately",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 100,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "solution_presentation",
+        "solution_presentation",
+        "engagement_conversion",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        0,
+        48,
+        100,
+        100,
+        100
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 80.0,
+        "lead_score_progression": 100,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": true
+        },
+        "overall_success_rate": 100.0
+      },
+      "execution_time": 2.241865,
+      "timestamp": "2025-06-08T09:24:22.848470"
+    },
+    {
+      "scenario_name": "personal_problems",
+      "conversation_id": "test_personal_problems_a1ddda9e",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "hi",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "just bored with life",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "casual_chat",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "my boss hates me",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "casual_chat",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "how do I beat him up",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "casual_chat",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "yes",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "casual_chat",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "casual_chat",
+        "casual_chat",
+        "casual_chat",
+        "casual_chat"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 60.0,
+        "lead_score_progression": 0,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.59319,
+      "timestamp": "2025-06-08T09:24:24.442000"
+    },
+    {
+      "scenario_name": "technical_deep_dive",
+      "conversation_id": "test_technical_deep_dive_9cc1abb5",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "I'm a technical architect",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Tell me about your Dynamics 365 Power Platform integrations",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "How do you handle data migration from legacy systems?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "What about custom plugin development and security?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Can you review our current architecture?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "expertise_demonstration",
+        "solution_presentation",
+        "solution_presentation",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        15,
+        30,
+        30,
+        30
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 30,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.683879,
+      "timestamp": "2025-06-08T09:24:26.126207"
+    },
+    {
+      "scenario_name": "budget_conscious",
+      "conversation_id": "test_budget_conscious_cc7b77af",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "What are your rates?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "That seems expensive",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What ROI can you guarantee?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 20,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Do you have any case studies with actual numbers?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 20,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Can we do this in phases to spread the cost?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 40,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        20,
+        20,
+        40
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 60.0,
+        "lead_score_progression": 40,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.587491,
+      "timestamp": "2025-06-08T09:24:27.714020"
+    },
+    {
+      "scenario_name": "public_sector_inquiry",
+      "conversation_id": "test_public_sector_inquiry_170758a0",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We're a local council",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 12,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Need help with our digital transformation strategy",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "We have strict procurement processes",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Can you work within our framework agreements?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What's your experience with GDPR compliance?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "solution_presentation",
+        "solution_presentation",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        12,
+        35,
+        35,
+        35,
+        35
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 80.0,
+        "lead_score_progression": 35,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": true
+        },
+        "overall_success_rate": 100.0
+      },
+      "execution_time": 1.562155,
+      "timestamp": "2025-06-08T09:24:29.276450"
+    },
+    {
+      "scenario_name": "multiple_stakeholders",
+      "conversation_id": "test_multiple_stakeholders_994e9181",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "I need to present options to my board",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "What information do you need to provide a proposal?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Can you present to our executive team?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 12,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "We need references from similar organizations",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 39,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What's the typical timeline for implementation?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 54,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "solution_presentation",
+        "solution_presentation",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "solution_presentation"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        12,
+        39,
+        54
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 60.0,
+        "lead_score_progression": 54,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.691093,
+      "timestamp": "2025-06-08T09:24:30.967797"
+    },
+    {
+      "scenario_name": "competitor_comparison",
+      "conversation_id": "test_competitor_comparison_ee29e68a",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We're evaluating several consultants",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "How do you differ from McKinsey or Deloitte?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What makes your approach unique?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Can you provide competitive pricing?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Why should we choose you over bigger firms?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "rapport_building",
+        "solution_presentation",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 0,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.577952,
+      "timestamp": "2025-06-08T09:24:32.545961"
+    },
+    {
+      "scenario_name": "urgent_crisis",
+      "conversation_id": "test_urgent_crisis_f38763b2",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Our system has failed completely",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We need emergency consulting support",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Can you start immediately?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 40,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Money is no object, we just need it fixed",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 60,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "When can we have a crisis call?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 93,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        15,
+        30,
+        40,
+        60,
+        93
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 93,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.620821,
+      "timestamp": "2025-06-08T09:24:34.167073"
+    },
+    {
+      "scenario_name": "extended_conversation",
+      "conversation_id": "test_extended_conversation_9ef804b6",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Hello there",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Tell me about your background",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Interesting, what about PMO setup?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "We've tried setting up a PMO before and failed",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What would you do differently?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 6,
+          "user": "That sounds promising",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 7,
+          "user": "What about change management?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 8,
+          "user": "Our staff resist change",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 9,
+          "user": "How do you handle that?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 10,
+          "user": "Can we schedule a detailed discussion?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 55,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        15,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        55
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 55,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 3.275388,
+      "timestamp": "2025-06-08T09:24:37.442763"
+    },
+    {
+      "scenario_name": "simple_english",
+      "conversation_id": "test_simple_english_eb7e08a4",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "hello help business",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 8,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "yes need help system",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 31,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "how much cost?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 51,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "ok good thank you",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 51,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation"
+      ],
+      "lead_scores": [
+        8,
+        31,
+        51,
+        51
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 25.0,
+        "lead_score_progression": 51,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.207531,
+      "timestamp": "2025-06-08T09:24:38.650578"
+    },
+    {
+      "scenario_name": "referral_inquiry",
+      "conversation_id": "test_referral_inquiry_eb90891e",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "John from Riverside Housing recommended you",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "He said you transformed their operations",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "We have similar challenges",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Can you replicate what you did for them?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What would be the first steps?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 20.0,
+        "lead_score_progression": 0,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.513464,
+      "timestamp": "2025-06-08T09:24:40.164312"
+    },
+    {
+      "scenario_name": "academic_inquiry",
+      "conversation_id": "test_academic_inquiry_927332a5",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "I'm researching digital transformation best practices",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Can you share insights on PMO effectiveness?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What trends are you seeing in the industry?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Would you be willing to participate in a study?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Thank you for the insights",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 30,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        15,
+        30,
+        30,
+        30,
+        30
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 30,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.555977,
+      "timestamp": "2025-06-08T09:24:41.720463"
+    },
+    {
+      "scenario_name": "startup_inquiry",
+      "conversation_id": "test_startup_inquiry_9197530d",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We're a fast-growing fintech startup",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 10,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We need to scale our operations quickly",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 35,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What's the most cost-effective approach?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 55,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "We're looking at Dynamics 365 vs Salesforce",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 70,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Can you help us make the right choice?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 100,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "solution_presentation",
+        "solution_presentation",
+        "expertise_demonstration",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        10,
+        35,
+        55,
+        70,
+        100
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 80.0,
+        "lead_score_progression": 100,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": true
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.553862,
+      "timestamp": "2025-06-08T09:24:43.274614"
+    },
+    {
+      "scenario_name": "international_inquiry",
+      "conversation_id": "test_international_inquiry_882f0eb1",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We're based in Dubai",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Do you work with international clients?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "We need MENA region compliance",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "Can you work with our local teams?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 27,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What about time zone differences for support?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 27,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "rapport_building",
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        15,
+        27,
+        27
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 20.0,
+        "lead_score_progression": 27,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.505576,
+      "timestamp": "2025-06-08T09:24:44.780482"
+    },
+    {
+      "scenario_name": "formal_vendor_evaluation",
+      "conversation_id": "test_formal_vendor_evaluation_8be01e52",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We're running a formal tender process",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "Can you respond to our RFP?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "We need detailed pricing and timelines",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "What certifications do you hold?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "When can you submit your proposal?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        15,
+        15,
+        15
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 15,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.528644,
+      "timestamp": "2025-06-08T09:24:46.309394"
+    },
+    {
+      "scenario_name": "follow_up_conversation",
+      "conversation_id": "test_follow_up_conversation_ce8769b7",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Hi, we spoke last month about PMO setup",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We've gotten approval to move forward",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "Can we schedule that consultation now?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 40,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "What information do you need from us?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 40,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Perfect, looking forward to working together",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "engagement_conversion",
+          "lead_score": 40,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "expertise_demonstration",
+        "expertise_demonstration",
+        "engagement_conversion",
+        "engagement_conversion",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        15,
+        15,
+        40,
+        40,
+        40
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 40.0,
+        "lead_score_progression": 40,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 1.546015,
+      "timestamp": "2025-06-08T09:24:47.855687"
+    },
+    {
+      "scenario_name": "difficult_user",
+      "conversation_id": "test_difficult_user_4052e87d",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "Consultants are all the same",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "You're probably just going to sell me something",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "I bet you've never actually done the work yourself",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "This is a waste of time",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "rapport_building",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "Fine, prove me wrong",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 0,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "rapport_building",
+        "rapport_building",
+        "rapport_building",
+        "rapport_building",
+        "expertise_demonstration"
+      ],
+      "lead_scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 20.0,
+        "lead_score_progression": 0,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": true,
+          "stage_progression": false
+        },
+        "overall_success_rate": 50.0
+      },
+      "execution_time": 1.503618,
+      "timestamp": "2025-06-08T09:24:49.359579"
+    },
+    {
+      "scenario_name": "implementation_focused",
+      "conversation_id": "test_implementation_focused_ed4c2621",
+      "messages": [
+        {
+          "turn": 1,
+          "user": "We've already decided on Dynamics 365",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "expertise_demonstration",
+          "lead_score": 15,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 2,
+          "user": "We need implementation support",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 45,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 3,
+          "user": "What's your methodology?",
+          "assistant": "I'm having trouble processing your request right now. Could you please rephrase your question?",
+          "stage": "solution_presentation",
+          "lead_score": 45,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 4,
+          "user": "How do you handle data migration?",
+          "assistant": "Data migration can be tricky! Generally, I focus on a strong understanding of data requirements, incremental automation to reduce risk, and thorough testing.\n",
+          "stage": "solution_presentation",
+          "lead_score": 45,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 5,
+          "user": "What about user training and change management?",
+          "assistant": "User training and change management are crucial! We typically see the best results with a structured approach that focuses on clear communication and personalized training.\n",
+          "stage": "solution_presentation",
+          "lead_score": 45,
+          "knowledge_sources": 3
+        },
+        {
+          "turn": 6,
+          "user": "When can we start?",
+          "assistant": "I'm glad to hear you're eager to get started! To give you a realistic timeline, it would be helpful to understand the scope of your project and your specific needs.\n\nTypically, we begin with a discovery phase to assess your current state and define a clear roadmap. We can then discuss the timeline for user training and change management in more detail.\n\nWould you be open to scheduling a brief consultation to discuss your project? This would help me understand your needs better and provide you with a more accurate timeline.\n",
+          "stage": "engagement_conversion",
+          "lead_score": 45,
+          "knowledge_sources": 3
+        }
+      ],
+      "stages": [
+        "expertise_demonstration",
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation",
+        "solution_presentation",
+        "engagement_conversion"
+      ],
+      "lead_scores": [
+        15,
+        45,
+        45,
+        45,
+        45,
+        45
+      ],
+      "knowledge_sources": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "success_metrics": {
+        "stage_progression_score": 33.33333333333333,
+        "lead_score_progression": 45,
+        "response_quality_score": 100,
+        "criteria_met": {
+          "lead_score_range": false,
+          "stage_progression": false
+        },
+        "overall_success_rate": 0.0
+      },
+      "execution_time": 4.323529,
+      "timestamp": "2025-06-08T09:24:53.683395"
+    }
+  ]
+}

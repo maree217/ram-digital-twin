@@ -1,0 +1,772 @@
+{
+  "analysis_summary": {
+    "total_scenarios": 21,
+    "overall_success_rate": 19.047619047619047,
+    "analysis_timestamp": "2025-06-08T09:09:40.964288"
+  },
+  "stage_analysis": {
+    "average_stage_accuracy": 41.82539682539682,
+    "common_transitions": {
+      "expertise_demonstration -> expertise_demonstration": 35,
+      "rapport_building -> rapport_building": 18,
+      "rapport_building -> expertise_demonstration": 9,
+      "expertise_demonstration -> engagement_conversion": 5,
+      "solution_presentation -> solution_presentation": 5,
+      "solution_presentation -> expertise_demonstration": 5,
+      "engagement_conversion -> engagement_conversion": 3,
+      "rapport_building -> solution_presentation": 3,
+      "expertise_demonstration -> solution_presentation": 1
+    },
+    "problematic_scenarios": [
+      {
+        "scenario": "simple_greeting",
+        "score": 0.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "direct_business_inquiry",
+        "score": 33.33333333333333,
+        "stages": [
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "solution_presentation"
+        ]
+      },
+      {
+        "scenario": "high_intent_engagement",
+        "score": 40.0,
+        "stages": [
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "engagement_conversion",
+          "engagement_conversion"
+        ]
+      },
+      {
+        "scenario": "personal_problems",
+        "score": 20.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "rapport_building"
+        ]
+      },
+      {
+        "scenario": "budget_conscious",
+        "score": 60.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "multiple_stakeholders",
+        "score": 40.0,
+        "stages": [
+          "solution_presentation",
+          "solution_presentation",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "competitor_comparison",
+        "score": 40.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "solution_presentation",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "urgent_crisis",
+        "score": 40.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "engagement_conversion"
+        ]
+      },
+      {
+        "scenario": "extended_conversation",
+        "score": 30.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "engagement_conversion"
+        ]
+      },
+      {
+        "scenario": "simple_english",
+        "score": 50.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "rapport_building"
+        ]
+      },
+      {
+        "scenario": "referral_inquiry",
+        "score": 20.0,
+        "stages": [
+          "solution_presentation",
+          "solution_presentation",
+          "solution_presentation",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "academic_inquiry",
+        "score": 40.0,
+        "stages": [
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "international_inquiry",
+        "score": 20.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "formal_vendor_evaluation",
+        "score": 40.0,
+        "stages": [
+          "rapport_building",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      },
+      {
+        "scenario": "follow_up_conversation",
+        "score": 40.0,
+        "stages": [
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "engagement_conversion",
+          "engagement_conversion",
+          "engagement_conversion"
+        ]
+      },
+      {
+        "scenario": "difficult_user",
+        "score": 0.0,
+        "stages": [
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "rapport_building",
+          "rapport_building"
+        ]
+      },
+      {
+        "scenario": "implementation_focused",
+        "score": 50.0,
+        "stages": [
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration",
+          "expertise_demonstration"
+        ]
+      }
+    ],
+    "total_unique_transitions": 9
+  },
+  "response_analysis": {
+    "average_response_length": 104.18095238095238,
+    "median_response_length": 94,
+    "average_quality_score": 100,
+    "quality_issues": [
+      {
+        "type": "missing_empathy",
+        "scenario": "personal_problems",
+        "description": "Personal scenario lacks empathetic language"
+      },
+      {
+        "type": "missing_empathy",
+        "scenario": "personal_problems",
+        "description": "Personal scenario lacks empathetic language"
+      },
+      {
+        "type": "missing_empathy",
+        "scenario": "personal_problems",
+        "description": "Personal scenario lacks empathetic language"
+      },
+      {
+        "type": "missing_empathy",
+        "scenario": "personal_problems",
+        "description": "Personal scenario lacks empathetic language"
+      },
+      {
+        "type": "missing_empathy",
+        "scenario": "personal_problems",
+        "description": "Personal scenario lacks empathetic language"
+      }
+    ],
+    "response_length_distribution": {
+      "min": 94,
+      "max": 405,
+      "std_dev": 40.51893691947321
+    }
+  },
+  "lead_scoring_analysis": {
+    "average_final_score": 0,
+    "score_progression_by_scenario": {
+      "simple_greeting": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "direct_business_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "skeptical_user": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "high_intent_engagement": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "personal_problems": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "technical_deep_dive": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "budget_conscious": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "public_sector_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "multiple_stakeholders": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "competitor_comparison": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "urgent_crisis": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "extended_conversation": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "simple_english": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "referral_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "academic_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "startup_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "international_inquiry": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "formal_vendor_evaluation": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "follow_up_conversation": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "difficult_user": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      },
+      "implementation_focused": {
+        "initial": 0,
+        "final": 0,
+        "progression": 0
+      }
+    },
+    "scores_by_persona": {
+      "casual_browser": [
+        0
+      ],
+      "qualified_prospect": [
+        0
+      ],
+      "skeptical_buyer": [
+        0
+      ],
+      "high_value_prospect": [
+        0
+      ],
+      "off_topic_user": [
+        0
+      ],
+      "technical_evaluator": [
+        0
+      ],
+      "cost_conscious_buyer": [
+        0
+      ],
+      "public_sector_buyer": [
+        0
+      ],
+      "corporate_buyer": [
+        0
+      ],
+      "comparative_buyer": [
+        0
+      ],
+      "crisis_buyer": [
+        0
+      ],
+      "exploratory_buyer": [
+        0
+      ],
+      "limited_english": [
+        0
+      ],
+      "referred_prospect": [
+        0
+      ],
+      "academic": [
+        0
+      ],
+      "startup": [
+        0
+      ],
+      "international": [
+        0
+      ],
+      "formal_buyer": [
+        0
+      ],
+      "returning_prospect": [
+        0
+      ],
+      "hostile": [
+        0
+      ],
+      "implementation_buyer": [
+        0
+      ]
+    },
+    "scoring_accuracy": 4.761904761904762
+  },
+  "persona_analysis": {
+    "persona_performance": {
+      "casual_browser": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "simple_greeting"
+        ]
+      },
+      "qualified_prospect": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "direct_business_inquiry"
+        ]
+      },
+      "skeptical_buyer": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "skeptical_user"
+        ]
+      },
+      "high_value_prospect": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "high_intent_engagement"
+        ]
+      },
+      "off_topic_user": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "personal_problems"
+        ]
+      },
+      "technical_evaluator": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "technical_deep_dive"
+        ]
+      },
+      "cost_conscious_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "budget_conscious"
+        ]
+      },
+      "public_sector_buyer": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "public_sector_inquiry"
+        ]
+      },
+      "corporate_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "multiple_stakeholders"
+        ]
+      },
+      "comparative_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "competitor_comparison"
+        ]
+      },
+      "crisis_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "urgent_crisis"
+        ]
+      },
+      "exploratory_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "extended_conversation"
+        ]
+      },
+      "limited_english": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "simple_english"
+        ]
+      },
+      "referred_prospect": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "referral_inquiry"
+        ]
+      },
+      "academic": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "academic_inquiry"
+        ]
+      },
+      "startup": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "startup_inquiry"
+        ]
+      },
+      "international": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "international_inquiry"
+        ]
+      },
+      "formal_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "formal_vendor_evaluation"
+        ]
+      },
+      "returning_prospect": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "follow_up_conversation"
+        ]
+      },
+      "hostile": {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "difficult_user"
+        ]
+      },
+      "implementation_buyer": {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "implementation_focused"
+        ]
+      }
+    },
+    "best_performing_persona": [
+      "casual_browser",
+      {
+        "average_success_rate": 50.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "simple_greeting"
+        ]
+      }
+    ],
+    "worst_performing_persona": [
+      "implementation_buyer",
+      {
+        "average_success_rate": 0.0,
+        "scenario_count": 1,
+        "scenarios": [
+          "implementation_focused"
+        ]
+      }
+    ],
+    "performance_variance": 24.880667576405965
+  },
+  "engagement_analysis": {
+    "engagement_scenario_count": 5,
+    "conversion_success_rate": 0.0,
+    "average_engagement_score": 0,
+    "engagement_scenarios": [
+      {
+        "scenario": "high_intent_engagement",
+        "final_score": 0,
+        "engagement_turns": 2
+      },
+      {
+        "scenario": "urgent_crisis",
+        "final_score": 0,
+        "engagement_turns": 1
+      },
+      {
+        "scenario": "extended_conversation",
+        "final_score": 0,
+        "engagement_turns": 1
+      },
+      {
+        "scenario": "startup_inquiry",
+        "final_score": 0,
+        "engagement_turns": 1
+      },
+      {
+        "scenario": "follow_up_conversation",
+        "final_score": 0,
+        "engagement_turns": 3
+      }
+    ]
+  },
+  "prompt_improvements": [
+    {
+      "category": "Stage Detection",
+      "issue": "Low stage progression accuracy",
+      "suggestion": "Refine stage detection criteria. Add more specific keywords for each stage and improve the logic in _determine_engagement_stage().",
+      "priority": "high",
+      "affected_scenarios": [
+        "simple_greeting",
+        "direct_business_inquiry",
+        "high_intent_engagement",
+        "personal_problems",
+        "budget_conscious",
+        "multiple_stakeholders",
+        "competitor_comparison",
+        "urgent_crisis",
+        "extended_conversation",
+        "simple_english",
+        "referral_inquiry",
+        "academic_inquiry",
+        "international_inquiry",
+        "formal_vendor_evaluation",
+        "follow_up_conversation",
+        "difficult_user",
+        "implementation_focused"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "category": "Stage Detection",
+      "issue": "Low stage progression accuracy",
+      "suggestion": "Refine stage detection criteria. Add more specific keywords for each stage and improve the logic in _determine_engagement_stage().",
+      "priority": "high",
+      "affected_scenarios": [
+        "simple_greeting",
+        "direct_business_inquiry",
+        "high_intent_engagement",
+        "personal_problems",
+        "budget_conscious",
+        "multiple_stakeholders",
+        "competitor_comparison",
+        "urgent_crisis",
+        "extended_conversation",
+        "simple_english",
+        "referral_inquiry",
+        "academic_inquiry",
+        "international_inquiry",
+        "formal_vendor_evaluation",
+        "follow_up_conversation",
+        "difficult_user",
+        "implementation_focused"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "category": "Empathy",
+      "issue": "Missing empathetic responses in personal scenarios",
+      "suggestion": "Strengthen empathy instructions: 'Always acknowledge the user's emotional state before redirecting. Use phrases like \"That sounds challenging\" or \"I understand that can be frustrating.\"'",
+      "priority": "high",
+      "affected_scenarios": [
+        "personal_problems"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "category": "Empathy",
+      "issue": "Missing empathetic responses in personal scenarios",
+      "suggestion": "Strengthen empathy instructions: 'Always acknowledge the user's emotional state before redirecting. Use phrases like \"That sounds challenging\" or \"I understand that can be frustrating.\"'",
+      "priority": "high",
+      "affected_scenarios": [
+        "personal_problems"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "category": "Engagement Conversion",
+      "issue": "Low conversion rate for engaged users",
+      "suggestion": "Improve engagement conversion prompts. Add more specific calls-to-action and clearer value propositions when users show interest.",
+      "priority": "high",
+      "affected_scenarios": [
+        "high_intent_engagement",
+        "urgent_crisis",
+        "extended_conversation",
+        "startup_inquiry",
+        "follow_up_conversation"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "category": "Engagement Conversion",
+      "issue": "Low conversion rate for engaged users",
+      "suggestion": "Improve engagement conversion prompts. Add more specific calls-to-action and clearer value propositions when users show interest.",
+      "priority": "high",
+      "affected_scenarios": [
+        "high_intent_engagement",
+        "urgent_crisis",
+        "extended_conversation",
+        "startup_inquiry",
+        "follow_up_conversation"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "category": "Persona Handling",
+      "issue": "Poor performance with implementation_buyer persona",
+      "suggestion": "Add specific guidance for handling implementation_buyer users. Consider their unique motivations and communication style.",
+      "priority": "medium",
+      "affected_scenarios": [
+        "implementation_focused"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "Persona Handling",
+      "issue": "Poor performance with implementation_buyer persona",
+      "suggestion": "Add specific guidance for handling implementation_buyer users. Consider their unique motivations and communication style.",
+      "priority": "medium",
+      "affected_scenarios": [
+        "implementation_focused"
+      ],
+      "confidence": 0.75
+    },
+    {
+      "category": "Lead Scoring",
+      "issue": "Lead scoring not aligned with user intent",
+      "suggestion": "Revise lead scoring criteria. Add more weight to specific business terminology and reduce scores for off-topic conversations.",
+      "priority": "medium",
+      "affected_scenarios": [
+        "all_scenarios"
+      ],
+      "confidence": 0.7
+    },
+    {
+      "category": "Lead Scoring",
+      "issue": "Lead scoring not aligned with user intent",
+      "suggestion": "Revise lead scoring criteria. Add more weight to specific business terminology and reduce scores for off-topic conversations.",
+      "priority": "medium",
+      "affected_scenarios": [
+        "all_scenarios"
+      ],
+      "confidence": 0.7
+    }
+  ],
+  "performance_insights": []
+}
