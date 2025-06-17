@@ -17,19 +17,23 @@ class SimpleKnowledgeSearch:
         if not self.knowledge_base_path.exists():
             logger.warning(f"Knowledge base directory {self.knowledge_base_path} does not exist")
             return
-        
-        for file_path in self.knowledge_base_path.glob("*.txt"):
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-                    self.documents[file_path.stem] = {
-                        'content': content,
-                        'path': str(file_path),
-                        'size': len(content)
-                    }
-                logger.info(f"Loaded document: {file_path.stem}")
-            except Exception as e:
-                logger.error(f"Error loading {file_path}: {str(e)}")
+
+        file_types_to_load = ["*.txt", "*.md"]
+        for file_type in file_types_to_load:
+            for file_path in self.knowledge_base_path.glob(file_type):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        content = f.read()
+                        # Use file_path.name for uniqueness if stems clash between .txt and .md
+                        doc_key = file_path.name
+                        self.documents[doc_key] = {
+                            'content': content,
+                            'path': str(file_path),
+                            'size': len(content)
+                        }
+                    logger.info(f"Loaded document: {doc_key} (type: {file_type})")
+                except Exception as e:
+                    logger.error(f"Error loading {file_path}: {str(e)}")
     
     def search(self, query: str, max_results: int = 3) -> List[Dict]:
         """
@@ -66,11 +70,26 @@ class SimpleKnowledgeSearch:
         """Extract meaningful keywords from the query"""
         # Remove common stop words
         stop_words = {
-            'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
-            'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'were', 'be',
-            'been', 'being', 'have', 'has', 'had', 'do', 'does', 'did', 'will',
-            'would', 'could', 'should', 'may', 'might', 'must', 'can', 'about',
-            'what', 'how', 'when', 'where', 'why', 'who', 'which', 'this', 'that'
+            'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', "aren't", 'as', 'at',
+            'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by',
+            'can', "can't", 'cannot', 'com', 'could', "couldn't",
+            'did', "didn't", 'do', 'does', "doesn't", 'doing', "don't", 'down', 'during',
+            'each',
+            'few', 'for', 'from', 'further',
+            'had', "hadn't", 'has', "hasn't", 'have', "haven't", 'having', 'he', "he'd", "he'll", "he's", 'her', 'here', "here's", 'hers', 'herself', 'him', 'himself', 'his', 'how', "how's",
+            'i', "i'd", "i'll", "i'm", "i've", 'if', 'in', 'into', 'is', "isn't", 'it', "it's", 'its', 'itself',
+            "let's",
+            'me', 'more', 'most', "mustn't", 'my', 'myself',
+            'no', 'nor', 'not',
+            'of', 'off', 'on', 'once', 'only', 'or', 'other', 'ought', 'our', 'ours', 'ourselves', 'out', 'over', 'own',
+            'r',
+            'same', 'shall', "shan't", 'she', "she'd", "she'll", "she's", 'should', "shouldn't", 'so', 'some', 'such',
+            'than', 'that', "that's", 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', "there's", 'these', 'they', "they'd", "they'll", "they're", "they've", 'this', 'those', 'through', 'to', 'too',
+            'under', 'until', 'up', 'us',
+            'very',
+            'was', "wasn't", 'we', "we'd", "we'll", "we're", "we've", 'were', "weren't", 'what', "what's", 'when', "when's", 'where', "where's", 'which', 'while', 'who', "who's", 'whom', 'why', "why's", 'with', "won't", 'would', "wouldn't",
+            'www',
+            'you', "you'd", "you'll", "you're", "you've", 'your', 'yours', 'yourself', 'yourselves'
         }
         
         # Extract words and filter out stop words
